@@ -1,5 +1,6 @@
 name: auto_route_generator
 description: AutoRoute is a declartive routing solution, where everything needed for navigation is automatically generated for you.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 4.0.0
 homepage: https://github.com/Milad-Akarie/auto_route_library
 
@@ -15,7 +16,10 @@ dependencies:
   code_builder: ^4.1.0
   dart_style: ^2.2.0
   auto_route:
-       ^4.0.0
+    git:
+      url: https://github.com/kryptogo/auto_route_library.git
+      path: auto_route
+      ref: master
 #    path: ../auto_route
 
 
