@@ -150,7 +150,7 @@ class _CustomTabBarViewState extends State<CustomTabBarView> {
       return Future<void>.value();
     }
 
-    final Duration duration = _controller!.animationDuration;
+    final Duration duration = kTabScrollDuration;
 
     if (duration == Duration.zero) {
       _pageController.jumpToPage(_currentIndex!);

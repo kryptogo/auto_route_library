@@ -17,8 +17,7 @@ class AutoRouteInformationProvider extends RouteInformationProvider
       {RouteInformation? initialRouteInformation}) {
     final initialRouteInfo = initialRouteInformation ??
         RouteInformation(
-          location: WidgetsBinding.instance.window.defaultRouteName
-        );
+            location: WidgetsBinding.instance?.window?.defaultRouteName);
     return AutoRouteInformationProvider._(
       initialRouteInformation: initialRouteInfo,
     );
@@ -51,7 +50,7 @@ class AutoRouteInformationProvider extends RouteInformationProvider
   RouteInformation _value;
 
   RouteInformation _valueInEngine = RouteInformation(
-      location: WidgetsBinding.instance.window.defaultRouteName);
+      location: WidgetsBinding.instance?.window?.defaultRouteName);
 
   void _platformReportsNewRouteInformation(RouteInformation routeInformation) {
     if (_value == routeInformation) return;
@@ -62,14 +61,14 @@ class AutoRouteInformationProvider extends RouteInformationProvider
 
   @override
   void addListener(VoidCallback listener) {
-    if (!hasListeners) WidgetsBinding.instance.addObserver(this);
+    if (!hasListeners) WidgetsBinding.instance?.addObserver(this);
     super.addListener(listener);
   }
 
   @override
   void removeListener(VoidCallback listener) {
     super.removeListener(listener);
-    if (!hasListeners) WidgetsBinding.instance.removeObserver(this);
+    if (!hasListeners) WidgetsBinding.instance?.removeObserver(this);
   }
 
   @override
@@ -78,7 +77,7 @@ class AutoRouteInformationProvider extends RouteInformationProvider
     // will be added and removed in a coherent fashion such that when the object
     // is no longer being used, there's no listener, and so it will get garbage
     // collected.
-    if (hasListeners) WidgetsBinding.instance.removeObserver(this);
+    if (hasListeners) WidgetsBinding.instance?.removeObserver(this);
     super.dispose();
   }
 

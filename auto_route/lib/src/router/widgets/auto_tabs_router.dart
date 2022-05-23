@@ -556,7 +556,7 @@ class _AutoTabsRouterTabBarState extends _AutoTabsRouterState
           !_tabController.indexIsChanging) {
         _tabController.animateTo(
           _controller!.activeIndex,
-          duration: typedWidget.duration,
+          duration: typedWidget.duration ?? kTabScrollDuration,
           curve: typedWidget.curve,
         );
       } else if (mounted) {
@@ -574,7 +574,7 @@ class _AutoTabsRouterTabBarState extends _AutoTabsRouterState
       _tabController.animateTo(
         _controller!.activeIndex,
         curve: typedWidget.curve,
-        duration: typedWidget.duration,
+        duration: typedWidget.duration ?? kTabScrollDuration,
       );
     }
   }
